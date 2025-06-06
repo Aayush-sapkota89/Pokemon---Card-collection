@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-pokemon-gray-light text-pokemon-gray-dark font-sans;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-lg font-semibold transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-pokemon-red text-white hover:bg-red-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-pokemon-blue text-white hover:bg-blue-600;
+  }
+  
+  .badge {
+    @apply px-2 py-1 rounded-full text-xs font-semibold;
+  }
+  
+  .container-custom {
+    @apply px-4 sm:px-6 md:px-8 mx-auto max-w-7xl;
+  }
+  
+  .page-transition {
+    @apply animate-fade-in duration-300;
+  }
+}
+
+.pokemon-bg-pattern {
+  background-color: #f9fafb;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30c-8.284 0-15-6.716-15-15 0-8.284 6.716-15 15-15 8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15zm0-30c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z' fill='%23f3f4f6' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Type color badges */
+.type-badge {
+  @apply badge text-white;
+}
+
+/* Animation for card loading */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.5) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-pokemon-gray-light;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-pokemon-gray rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-pokemon-gray-dark;
+}
